@@ -164,8 +164,8 @@ bool WalkingLoggerModule::updateModule()
         }
 
         // write into the file
-        double time = yarp::os::Time::now() - m_time0;
-        m_stream << time << " ";
+        double time = yarp::os::Time::now();
+        m_stream << std::setprecision (15) << time << " ";
         for(int i = 0; i < m_numberOfValues; i++)
             m_stream << (*data)[i] << " ";
 
